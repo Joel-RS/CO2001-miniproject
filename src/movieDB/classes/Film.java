@@ -1,9 +1,12 @@
 package movieDB.classes;
 
+import java.io.*;
 import java.util.*;
 import java.util.Map.Entry;
 
-public class Film {
+public class Film implements Serializable {
+	
+	private static final long serialVersionUID = 9135648442647638675L;
 	private static HashMap<Integer, Film> fMap = new HashMap<Integer, Film>();
 	private String title = "";
 	private int filmId = -1;
@@ -14,10 +17,13 @@ public class Film {
 		title = n; ratings = r; tags = t; filmId = i;
 	}
 	
+	public static HashMap<Integer, Film> getFMap(){
+		return fMap;
+	}
 	public static List<Film> getFilmList(){
 		return (List<Film>) fMap.values();
 	}
-	public void setUserList(HashMap<Integer, Film> f) {
+	public static void setFilmList(HashMap<Integer, Film> f) {
 		fMap = f;
 	}
 	

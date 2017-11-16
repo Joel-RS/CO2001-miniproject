@@ -4,7 +4,9 @@ import java.io.*;
 import java.util.*;
 import java.util.Map.Entry;
 
-public class User {
+public class User implements Serializable{
+	
+	private static final long serialVersionUID = -3490218767856592143L;
 	private static HashMap<Integer, User> uMap = new HashMap<Integer, User>();
 	private String userName, gender, password;
 	private int userId, age;
@@ -41,6 +43,11 @@ public class User {
 	public int getUserId() 						{return userId;}
 	public void setUserId(int userId) 			{this.userId = userId;}
 	
+	public static HashMap<Integer, User> getUMap(){
+		return uMap;
+	}
+	
+	/*
 	public String toString() 					{
 		String toRet;
 		toRet = userName+","+gender+","+password+","+age;
@@ -69,6 +76,7 @@ public class User {
 			buf.close();
 		}catch (IOException e) {e.printStackTrace();}
 	}
+	*/
 	
 	public static <T, E> T getKeyByVal(HashMap<T, E> m, Object o){
 		for(Entry<T, E> e: m.entrySet()) {

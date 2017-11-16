@@ -5,14 +5,10 @@ public class Tag{
 	private int filmId, userId;
 	private String tag;
 		
-	public Tag(int f, int u, String t){
-		filmId = f;
+	public Tag(int u, String t){
 		userId = u;
 		tag = t;
 	}
-
-	public int getFilmId(){return filmId;}
-	public void setFilmId(int filmId){this.filmId = filmId;}
 
 	public int getUserId(){return userId;}
 	public void setUserId(int userId){this.userId = userId;}
